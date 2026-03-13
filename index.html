@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Alex's Last Day of School</title>
+
+<style>
+body{
+background:black;
+color:#00ff88;
+font-family:monospace;
+text-align:center;
+padding-top:40px;
+}
+
+button{
+background:#111;
+color:#00ff88;
+border:2px solid #00ff88;
+padding:12px;
+margin:10px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#00ff88;
+color:black;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>🎮 Alex's Last Day of School</h1>
+
+<div id="game">
+
+<p>Your alarm goes off. It's the last day of school.</p>
+
+<button onclick="wakeUp()">Wake up early</button>
+<button onclick="snooze()">Hit snooze</button>
+
+</div>
+
+<script>
+
+function wakeUp(){
+document.getElementById("game").innerHTML = `
+<p>You get to school on time. Math class begins.</p>
+<p>What is 7 x 8?</p>
+
+<button onclick="correctMath()">56</button>
+<button onclick="detention()">54</button>
+<button onclick="detention()">64</button>
+`;
+}
+
+function snooze(){
+document.getElementById("game").innerHTML = `
+<p>You overslept and rushed to school.</p>
+<button onclick="wakeUp()">Run to math class</button>
+`;
+}
+
+function correctMath(){
+document.getElementById("game").innerHTML = `
+<h2>Scene 3: History Class</h2>
+
+<p>Your teacher asks:</p>
+<p><b>Who was the first president of the United States?</b></p>
+
+<button onclick="detention()">Alexander Wulsin</button>
+<button onclick="historyCorrect()">George Washington</button>
+<button onclick="detention()">Abraham Lincoln</button>
+`;
+}
+
+function historyCorrect(){
+document.getElementById("game").innerHTML = `
+<h2>Scene 4: Lunch</h2>
+
+<p>A bully walks up to Alex.</p>
+<p>"Give me your lunch money."</p>
+
+<button onclick="detention()">Give it to him and be hungry</button>
+<button onclick="detention()">Punch him and keep your money</button>
+<button onclick="lunchCorrect()">Hell nah</button>
+`;
+}
+
+function lunchCorrect(){
+document.getElementById("game").innerHTML = `
+<h2>Scene 5: PE</h2>
+
+<p>Your coach asks a trivia question.</p>
+<p><b>Which team won the 2022 World Cup?</b></p>
+
+<button onclick="detention()">Argentina</button>
+<button onclick="detention()">France</button>
+<button onclick="peCorrect()">Chad</button>
+`;
+}
+
+function peCorrect(){
+document.getElementById("game").innerHTML = `
+<h2>Scene 6: Graduation</h2>
+
+<p>You survived the last day of school!</p>
+<p>The principal calls your name.</p>
+
+<h2>🎓 Congratulations Alex!</h2>
+<p>You graduated and summer begins!</p>
+
+<h3>🏆 PERFECT ENDING</h3>
+`;
+}
+
+function detention(){
+document.getElementById("game").innerHTML = `
+<h2>😬 Wrong choice!</h2>
+<p>You got detention on the last day.</p>
+
+<button onclick="location.reload()">Try Again</button>
+`;
+}
+
+</script>
+
+</body>
+</html>
